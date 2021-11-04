@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
+
+  <com.example.autofilltest.AuthEditText
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/password"
+    android:id="@+id/email"
+    android:layout_width="90dp"
+    android:layout_height="wrap_content"
+    android:autofillHints="emailAddress,email,username,phone"
+    android:hint="Email"
+    android:inputType="textAutoComplete" />
+
+    <com.example.autofilltest.AuthEditText
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/email"
+      android:id="@+id/password"
+      android:layout_width="90dp"
+      android:layout_height="wrap_content"
+      android:autofillHints="password"
+      android:hint="Password"
+      android:inputType="textPassword" />
+
+  <Button
+    android:id="@+id/btn_log_in"
+    android:text="Log in"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/password" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:visibility="gone"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:textSize="50sp"
+    android:text="not acceptable auth"
+    android:id="@+id/error_auth"
+    android:textColor="@color/design_default_color_error"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
